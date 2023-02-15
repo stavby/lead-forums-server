@@ -1,15 +1,16 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import express, { Express } from 'express';
+import { commentsRouter } from './routes/comments';
 
-dotenv.config();
+export const app: Express = express();
 
-const app: Express = express();
-const port = process.env.PORT;
+app.set('PORT', process.env.PORT || 8000);
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
-});
+app.get('/', (req, res) => {
+  res.send('Get!!!');
+})
 
-app.listen(port, () => {
+app.use('/comments', commentsRouter);
+
+app.listen(app.get('PORT'), () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
