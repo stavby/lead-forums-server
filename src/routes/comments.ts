@@ -1,10 +1,9 @@
-import express, { Request, Response, Router } from 'express';
-import { app } from '../server';
+// import { PrismaClient } from '@prisma/client'
+// import express, { Request, Response, Router } from 'express';
 
-app.set('PORT', process.env.PORT || 8000);
+// const prisma = new PrismaClient()
+// export const postsRouter: Router = express.Router() 
 
-export const commentsRouter: Router = express.Router()
-
-commentsRouter.get('/', (req: Request, res: Response) => {
-    res.send("comments");
-})
+// postsRouter.get('/', async (req: Request, res: Response) => {
+//     const posts = await prisma.post.findMany();
+// })
