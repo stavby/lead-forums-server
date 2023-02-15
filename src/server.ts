@@ -1,11 +1,11 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response} from 'express';
 import { commentsRouter } from './routes/comments';
 
 export const app: Express = express();
 
 app.set('PORT', process.env.PORT || 8000);
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Get!!!');
 })
 
